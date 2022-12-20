@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/this.js"></script>
+    <title>this 키워드</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var 사람 = {
+        name:'손흥민',
+        sayHi: function(){
+            console.log('안녕 나는',this.name)
+        }
+    }
+    사람.sayHi();
+
+    var 자료 = {
+        data : [1,2,3,4,5
+    
+    ]
+        
+    }
+    // for(let i = 0; i<99999;++i) {
+    //     자료.data.push(i);
+    // }
+
+        var sum =[];
+        자료.data.forEach(function(a,idx){
+            
+                sum.push(a);
+                console.log(`push ${idx+1} : ${a}`);
+                setTimeout(function(){
+                    console.log('aaaa')
+                },500)
+           
+
+        }
+        
+        );
+        
+    
+    console.log('forEach function\'s callback function is asynchronous?')
+
+    function 함수(...rest){
+        console.log(rest);
+    }
+    함수(1,2,3,4);
+</script>
+</html>
