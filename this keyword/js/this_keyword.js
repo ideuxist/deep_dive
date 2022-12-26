@@ -256,9 +256,23 @@ const person3 = {
     }
 };
 person3.foo(function(){
-    console.log(`Hi! my name is ${this.name}.`);//Hi! my name is .
+    console.log(`Hi! my name is ${this.name}.`);//2 Hi! my name is .
+    //브라우저 환경에서 window.name은 브라우저 창의 이름을 나타내는 빌트인 프로퍼티이며 기본값은 ''이다
 });
 //person.foo의 콜백 함수가 호출되기 이전인 1의 시점에서 this는 foo메서드를 호출한 객체
 //즉 person 객체를 가리킨다 그러나 person.foo의 콜백 함수가 일반 함수로서 호출된 2의 시점에서 
-//this는 전역객체 window를 가리킨다
+//this는 전역객체 window를 가리킨다 따라서 person3.foo의 콜백함수 내부에서 
+//this.name은 window.name과 같다
+//person3.foo의 콜백함수는 외부함수 person3.foo를 돕는 헬퍼 함수 역할을 하기 때문에 외부함수 내부의 this와
+//콜백함수 내부의 this가 상이하면 문맥상 문제가 발생한다
+//따라서 일치 시켜야 한다 이때 bind 메서드를 사용하여 this를 일치시킬 수 있다
+const person4 = {
+    name:'Gwon',
+    foo(callback) {
+        setTimeout(callback.bind(this),500);
+    }
+};
+person.foo(function(){
+    console.log(`Hi! my name is ${this.name}.`)//Hi! my name is Gwon.
+})
  
