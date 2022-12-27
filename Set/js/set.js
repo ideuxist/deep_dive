@@ -149,3 +149,4 @@ const setP = new Set([2,3]);
 console.log(setM.inSuperset2(setN));//true
 //setN이 setM의 상위 집합인지 확인한다
 console.log(setN.inSuperset2(setM));//false
+
