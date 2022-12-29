@@ -43,4 +43,10 @@ for(const entry of map5){
 }  
 console.log([...map5]);//[Array(2), Array(2)]
 const [a,b] = map5
-console.log(a,b);
+console.log(a,b);//[{name:'Lee','developer}] [{name:'kim',desingner}]
+//Map 객체는 이터러블이면서 동시에 이터레이터인 객체를 반환하는 메서드를 제공한다
+//Map.prototype.keys 요소키를 값으로 갖는 이터러블이면서 이터레이터인 객체를 반환
+//Map.prototype.values 요소값을 값으로 갖는 이터러블이면서 이터레이터인 객체를 반환
+//Map.prototype.entries 요소키와 요소값을 값으로 갖는 이터러블이면서 이터레이터인 객체를 반환
+//Map 객체는 요소의 순서에 의미를 갖지 않지만 Map 객체를 순회하는 순서는 요소가 추가된 순서를 따른다
+//이는 ES사양에 규정되어 있지는 않지만 다른 이터러블의 순회화 호환성을 유지하기 위함이다
