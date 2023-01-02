@@ -86,5 +86,6 @@ function sum() {
     //이터러블이면서 유사 배열 객체인 arguments를 배열로 변환
     return [...arguments].reduce((pre,cur)=>pre+cur,0)
 }
-console.log(sum(1,2,3));//6
+console.log(sum(1,2,3));//6 단 이터러블이 아닌 유사배열객체는 스프레드 문법의 대상이 될 수 없다
+//Array.form은 유사배열객체 또는 이터러블을 배열로 변환한다
 
